@@ -24,6 +24,15 @@ class dll:
 
         else:
             self.head = newNode
+
+    def insertFromBottom(self, data):
+        newNode = node(data)
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        newNode.prev = temp
+        temp.next = newNode
+
     # Travers the linked list
 
         # from top to bottom
@@ -39,12 +48,17 @@ class dll:
         while temp.next is not None:
             temp = temp.next
         while temp.prev is not None:
-            print(temp.data,end="")
+            print(temp.data,end=" ")
             temp = temp.prev
-
+        print(temp.data,end=" ")
+        
 DoublyLinkedList = dll()
+
 DoublyLinkedList.insertFromTop(1)
 DoublyLinkedList.insertFromTop(2)
 DoublyLinkedList.insertFromTop(3)
 DoublyLinkedList.traversFromTop()
+print("")
 
+DoublyLinkedList.insertFromBottom(10)
+DoublyLinkedList.traversFromBottom()
