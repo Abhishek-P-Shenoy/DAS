@@ -50,16 +50,31 @@ class sll:
         if self.head is None:
             print("Linked List is empty")
         else:
-            while(self.head):
-                print(self.head.data,end=" ")
-                self.head = self.head.next
+            temp = self.head
+            while(temp):
+                print(temp.data,end=" ")
+                temp = temp.next
+    
+    def deleteFromTop(self):
+        temp = self.head
+        self.head = temp.next
+        temp.next = None
 
         
 
 newSingleLinkedList = sll()
 newSingleLinkedList.insertFromTop(1)
 newSingleLinkedList.insertFromTop(2)
-newSingleLinkedList.insertFromTop(3)
 newSingleLinkedList.insertFromTop(4)
 newSingleLinkedList.insertFromEnd(5)
 newSingleLinkedList.travarse()
+print()
+newSingleLinkedList.insertFromEnd(5)
+newSingleLinkedList.travarse()
+print()
+newSingleLinkedList.insertInBetween(1,10)
+newSingleLinkedList.travarse()
+print()
+newSingleLinkedList.deleteFromTop()
+newSingleLinkedList.travarse()
+
