@@ -33,7 +33,10 @@ class sll:
 
     def insertFromEnd(self,data):
         newNode = node(data)
-        self.head.next = newNode
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        temp.next = newNode
     
     def insertInBetween(self,location, data):
         newNode = node(data)
@@ -58,6 +61,5 @@ newSingleLinkedList.insertFromTop(1)
 newSingleLinkedList.insertFromTop(2)
 newSingleLinkedList.insertFromTop(3)
 newSingleLinkedList.insertFromTop(4)
-newSingleLinkedList.insertInBetween(1,23)
-newSingleLinkedList.insertInBetween(1,6)
+newSingleLinkedList.insertFromEnd(5)
 newSingleLinkedList.travarse()
