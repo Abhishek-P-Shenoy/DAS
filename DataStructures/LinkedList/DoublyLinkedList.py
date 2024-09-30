@@ -32,7 +32,16 @@ class dll:
             temp = temp.next
         newNode.prev = temp
         temp.next = newNode
-
+    
+    def insertInBetween(self, location, data):
+        newNode = node(data)
+        temp = self.head
+        for i in range(1, location-1):
+            temp = temp.next
+        newNode.prev = temp
+        newNode.next = temp.next
+        newNode.next.prev = newNode
+        temp.next = newNode
     # Travers the linked list
 
         # from top to bottom
@@ -51,7 +60,7 @@ class dll:
             print(temp.data,end=" ")
             temp = temp.prev
         print(temp.data,end=" ")
-        
+
 DoublyLinkedList = dll()
 
 DoublyLinkedList.insertFromTop(1)
@@ -61,4 +70,9 @@ DoublyLinkedList.traversFromTop()
 print("")
 
 DoublyLinkedList.insertFromBottom(10)
+DoublyLinkedList.traversFromBottom()
+
+print("")
+
+DoublyLinkedList.insertInBetween(2,20)
 DoublyLinkedList.traversFromBottom()
