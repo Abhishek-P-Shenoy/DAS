@@ -27,3 +27,15 @@ print(stack2)
 
 print(stack2.pop())
 print(stack2)
+
+# Implementaion using Lifoqueue from queue library import LIFOqueue
+
+from queue import LifoQueue
+
+stack3 = LifoQueue()
+stack3.put(1)
+stack3.put(2)
+stack3.put(3)
+stack3.put(4)
+# here we cant use print to print the queue so we need to use other methods like size to find out or to pop things and see.
+print(stack3.qsize())
