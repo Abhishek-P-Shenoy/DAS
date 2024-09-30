@@ -38,4 +38,10 @@ stack3.put(2)
 stack3.put(3)
 stack3.put(4)
 # here we cant use print to print the queue so we need to use other methods like size to find out or to pop things and see.
+
 print(stack3.qsize())
+
+print(stack3.get())
+
+print(stack3.full())
+
