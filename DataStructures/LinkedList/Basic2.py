@@ -47,5 +47,18 @@ class sll:
             else:
                 count += 1
                 temp = temp.next
-    def travarse(selfl)
-            
+    def travarse(self):
+        if self.head is None:
+            print("Linked List is empty")
+        else:
+            while(self.head):
+                print(self.head.data,end=" ")
+                self.head = self.head.next
+
+        
+
+newSingleLinkedList = sll()
+newSingleLinkedList.insertFromTop(1)
+newSingleLinkedList.insertFromTop(2)
+newSingleLinkedList.insertFromTop(3)
+newSingleLinkedList.travarse()
