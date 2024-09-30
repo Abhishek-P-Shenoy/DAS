@@ -59,7 +59,23 @@ class sll:
         temp = self.head
         self.head = temp.next
         temp.next = None
-
+    
+    def deleteFromBottom(self):
+        previous = self.head
+        temp = self.head.next
+        while temp.next is not None:
+            temp = temp.next
+            previous = previous.next
+        previous.next = None
+        
+    def deleteInBetween(self,location):
+        prev = self.head
+        temp = self.head.next
+        for i in range(1, location-1):
+            prev = prev.next
+            temp = temp.next
+        prev.next = temp.next
+        temp.next = None
         
 
 newSingleLinkedList = sll()
@@ -76,5 +92,11 @@ newSingleLinkedList.insertInBetween(1,10)
 newSingleLinkedList.travarse()
 print()
 newSingleLinkedList.deleteFromTop()
+newSingleLinkedList.travarse()
+print()
+newSingleLinkedList.deleteFromBottom()
+newSingleLinkedList.travarse()
+print()
+newSingleLinkedList.deleteInBetween(2)
 newSingleLinkedList.travarse()
 
