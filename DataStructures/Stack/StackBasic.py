@@ -13,3 +13,17 @@ print(stack1)
 print(stack1.pop())
 print(stack1)
 
+# Implementation using deque from collections library
+
+from collections import deque
+
+stack2 = deque()
+
+stack2.append(1)
+stack2.append(2)
+stack2.append(3)
+stack2.append(4)
+print(stack2)
+
+print(stack2.pop())
+print(stack2)
