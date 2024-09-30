@@ -37,16 +37,12 @@ class sll:
     
     def insertInBetween(self,location, data):
         newNode = node(data)
-        count = 0
         temp = self.head
-        while(temp):
-            if(count == location-1):
-                newNode.next = temp.next
-                temp.next = newNode
-                return 
-            else:
-                count += 1
-                temp = temp.next
+        for i in range(1,location-1):
+            temp = temp.next
+        newNode.next = temp.next
+        temp.next = newNode
+
     def travarse(self):
         if self.head is None:
             print("Linked List is empty")
@@ -61,4 +57,7 @@ newSingleLinkedList = sll()
 newSingleLinkedList.insertFromTop(1)
 newSingleLinkedList.insertFromTop(2)
 newSingleLinkedList.insertFromTop(3)
+newSingleLinkedList.insertFromTop(4)
+newSingleLinkedList.insertInBetween(1,23)
+newSingleLinkedList.insertInBetween(1,6)
 newSingleLinkedList.travarse()
