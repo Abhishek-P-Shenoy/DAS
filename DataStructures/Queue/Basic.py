@@ -1,0 +1,1 @@
+# stack follows FiFo so enque (insert) always from tail and dequeue (deletion)
